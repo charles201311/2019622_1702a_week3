@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chunboyang.week3.dao.CompanyMapper">
+
+
+
+
+
+
+
+
+<select id="list" resultType="map">
+
+select  * from company  c left join company_type t on c.tid =t.tid
+
+<where>
+  <if test="null!=minMoney and minMoney!=''">
+     money >= #{minMoney}
+  </if>
+  
+    <if test="null!=maxMoney and maxMoney!=''">
+      and     money   &lt;= #{maxMoney}
+  </if>
+  
+ 
+    <if test="null!=tid and tid!=''">
+      and    c.tid in (${tid})
+  </if>
+
+</where>
+
+
+</select>
+
+
+<insert id="insert" >
+
+insert into company (cname,money,person,created,tid) values(#{cname},#{money},#{person},#{created},#{tid})
+
+
+</insert>
+
+</mapper>
