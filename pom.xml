@@ -15,7 +15,7 @@
 		<mysql.version>5.1.6</mysql.version>
 		<mybatis.spring.version>1.3.0</mybatis.spring.version>
 		<jackson.version>2.8.1</jackson.version>
-		<poi.version>3.9</poi.version>
+		<poi.version>3.17</poi.version>
 		<jstl.version>1.2</jstl.version>
 		<servlet-api.version>2.5</servlet-api.version>
 		<jsp-api.version>2.0</jsp-api.version>
